@@ -15,8 +15,7 @@ class LostFoundApplicationTests {
     private UserMapper userMapper;
     @Test
     void contextLoads() {
-        User user = userService.getUser("2018211683");
-        System.out.println(user);
+
         String stu = userMapper.getStuByName("xzh");
         System.out.println("学号是"+stu);
     }

@@ -1,9 +1,7 @@
 package com.luerdao.service.impl;
 
 import com.luerdao.dao.UserMapper;
-import com.luerdao.entity.User;
 import com.luerdao.service.UserService;
-import org.apache.ibatis.annotations.Select;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

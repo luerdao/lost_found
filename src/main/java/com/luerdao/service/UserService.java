@@ -1,7 +1,6 @@
 package com.luerdao.service;
 
 import com.luerdao.entity.User;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 

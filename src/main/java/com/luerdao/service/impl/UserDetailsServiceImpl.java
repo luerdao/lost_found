@@ -1,8 +1,5 @@
 package com.luerdao.service.impl;
 
-import com.luerdao.Constant.AdminEnum;
-import com.luerdao.entity.User;
-import com.luerdao.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
