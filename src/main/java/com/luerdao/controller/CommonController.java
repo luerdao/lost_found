@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 import javax.imageio.ImageIO;
@@ -23,19 +22,23 @@ public class CommonController {
     @Autowired
     private UserServiceImpl userService;
 
-//    @RequestMapping("/tologin")
-//    public String login(){
-//        return "common/login";
-//    }
+    @RequestMapping("/tologin")
+    public String login(){
+        return "common/login";
+    }
 
 
 
     @RequestMapping("/t1")
     public String test1(){
-        //classpath:/templates/test.html
-        return "test";
+        //classpath:/templates/index.html
+        return "index";
     }
 
+    @RequestMapping("/")
+    public String index(){
+        return "index";
+    }
 
 //    @RequestMapping("/login")
 //    public String toLogin(@RequestParam("username")String username, @RequestParam("password")String password){

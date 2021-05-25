@@ -14,16 +14,31 @@ import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        super.configure(http);
-        //        http
+
+//        super.configure(http);
+
+//                http
 //                .formLogin().loginPage("/tologin").loginProcessingUrl("/login").successForwardUrl("/t1").permitAll()
+//                        .and()
 //                .authorizeRequests().antMatchers("/").permitAll()
 //                .antMatchers("/pc/**","/pc/css/*.css","/pc/js/*.js").permitAll()
-//                .antMatchers("/pc/**","/login").permitAll()
+//                .authorizeRequests().antMatchers("/pc/**","/tologin","/login").permitAll()
 //                .anyRequest().authenticated()
 //                .and()
 //                .logout().permitAll();
 //        http.authorizeRequests().anyRequest().permitAll();
+
+
+        http
+                .formLogin().loginPage("/tologin").loginProcessingUrl("/loginProcess").permitAll().successForwardUrl("/")
+                .and()
+                .authorizeRequests().antMatchers("/pc/**").permitAll()
+                .anyRequest().authenticated()
+                .and()
+                .logout().permitAll()
+                .and()
+                .csrf().disable();
+
     }
 
     @Override
