@@ -1,0 +1,152 @@
+
+
+.login-page{
+  margin: 0 auto;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+.login-page .login-block{
+  display: block;
+  width:100%;
+  height:100%;
+  position: absolute;
+  top:0;
+  left:0;
+}
+.login-block .login-pop{
+  width:400px;
+  min-height:100px;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  z-index:100;
+  box-shadow: 5px 5px 0px 0px rgba(0,0,0,0.1);
+  background: rgba(255,255,255,.8);
+}
+.login-pop .platform-name{
+  text-align: center;
+  color:#6D93DF;
+  font-size: 32px;
+  padding:30px 0;
+}
+.login-pop .login-body{
+  padding:15px 0;
+}
+.login-body .login-info,
+.login-body .login-right{
+  float:left;
+}
+.login-body .login-info{
+  width:400px;
+  padding:10px 0;
+  position: relative;
+}
+
+.login-info .li{
+  padding:13px 30px;
+  border-left:4px solid transparent;
+}
+/*.login-info .li.focus{
+  background:rgba(242,246,249,.4);
+  border-left:4px solid #FFAA64;
+}*/
+.login-info .li .form-control{
+  width:100%;
+  height: 42px;
+  line-height:42px;
+  font-size:14px;
+  color: #555555;
+  padding:0px 10px 0 42px;
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  box-shadow: 0px 5px 6px 0 rgba(0,0,0,.05);
+  outline: none;
+}
+.login-info .li .ele-wrap{
+  position: relative;
+}
+.login-info .li .ele-wrap .ico-user,
+.login-info .li .ele-wrap .ico-password,
+.login-info .li .ele-wrap .ico-code{
+  position: absolute;
+  top:50%;
+  margin-top:-11px;
+  left:10px;
+  width:22px;
+  height:22px;
+}
+.login-info .li .ele-wrap .ico-user{
+  background:url(../images/ico_user.png) 0 0 no-repeat;
+}
+.login-info .li .ele-wrap .ico-password{
+  background:url(../images/ico_password.png) 0 0 no-repeat;
+}
+.login-info .li .ele-wrap .ico-code{
+  background:url(../images/ico_code.png) 0 0 no-repeat;
+}
+
+
+.login-info .li .proving-code{
+  position: relative;
+  margin-right:104px;
+}
+.login-info .proxyinput-group{
+  font-size: 0;
+  margin-top:-10px;
+}
+.login-info .proxyinput-group .proxyinput{
+  display: inline-block;
+  text-align: center;
+  color:#B4B4B4;
+  font-size: 14px;
+  line-height:25px;
+  padding-left:35px;
+  /* visibility: hidden; */
+}
+.login-info .proxyinput-group .proxy-checkbox{
+  background:url(../images/checkbox.png)left center no-repeat;
+}
+.login-info .proxyinput-group .proxy-checkbox.checked{
+  background:url(../images/checkbox_checked.png)left center no-repeat;
+}
+.login-info .btn{
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 14px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 5px;
+  padding: 0 15px;
+  font-family: "微软雅黑";
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.login-info .btn-blue{
+  width:100%;
+  height:42px;
+  line-height:42px;
+  border:none;
+  background: #6D93DF;
+  border-radius: 0px;
+  margin-top:-10px;
+  box-shadow: 0px 5px 10px 0 rgba(109,147,223,.5);
+}
+.login-info .btn-blue:hover,
+.login-info .btn-blue:focus{
+  color:#ffffff;
+}
+
+.login-right .login-ewm{
+  text-align: center;
+}
+.login-right .login-ewm .ewm-img{
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  padding:10px;
+  margin:0 auto;
+}
