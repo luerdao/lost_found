@@ -27,20 +27,20 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         System.out.println(user);
         switch (user.getRole()){
             case 0:
-                GrantedAuthority grantedAuthority = new SimpleGrantedAuthority("USER");
+                GrantedAuthority grantedAuthority = new SimpleGrantedAuthority("ROLE_USER");
                 grantedAuthorities.add(grantedAuthority);
                 break;
             case 1:
-                grantedAuthorities.add(new SimpleGrantedAuthority("USER"));
-                grantedAuthorities.add(new SimpleGrantedAuthority("ADMIN"));
+                grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_USER"));
+                grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
                 break;
             case 2:
-                grantedAuthorities.add(new SimpleGrantedAuthority("USER"));
-                grantedAuthorities.add(new SimpleGrantedAuthority("ADMIN"));
-                grantedAuthorities.add(new SimpleGrantedAuthority("S_ADMIN"));
+                grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_USER"));
+                grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+                grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_S_ADMIN"));
                 break;
             default:
-                grantedAuthorities.add(new SimpleGrantedAuthority("USER"));
+                grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_USER"));
         }
         System.out.println(grantedAuthorities);
         System.out.println("用户注入成功");

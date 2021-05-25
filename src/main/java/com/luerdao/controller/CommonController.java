@@ -39,6 +39,18 @@ public class CommonController {
     public String index(){
         return "index";
     }
+    @RequestMapping("/user")
+    public String user(){
+        return "common/user";
+    }
+    @RequestMapping("/admin")
+    public String admin(){
+        return "admin/test";
+    }
+    @RequestMapping("/super")
+    public String sadmin(){
+        return "superAdmin/super";
+    }
 
 //    @RequestMapping("/login")
 //    public String toLogin(@RequestParam("username")String username, @RequestParam("password")String password){

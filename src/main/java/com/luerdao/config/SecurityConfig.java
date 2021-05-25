@@ -15,24 +15,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-//        super.configure(http);
-
-//                http
-//                .formLogin().loginPage("/tologin").loginProcessingUrl("/login").successForwardUrl("/t1").permitAll()
-//                        .and()
-//                .authorizeRequests().antMatchers("/").permitAll()
-//                .antMatchers("/pc/**","/pc/css/*.css","/pc/js/*.js").permitAll()
-//                .authorizeRequests().antMatchers("/pc/**","/tologin","/login").permitAll()
-//                .anyRequest().authenticated()
-//                .and()
-//                .logout().permitAll();
-//        http.authorizeRequests().anyRequest().permitAll();
-
-
         http
                 .formLogin().loginPage("/tologin").loginProcessingUrl("/loginProcess").permitAll().successForwardUrl("/")
                 .and()
                 .authorizeRequests().antMatchers("/pc/**").permitAll()
+                .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/common/**").hasRole("USER")
+                .antMatchers("/super/**").hasRole("S_ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .logout().permitAll()
