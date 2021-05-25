@@ -5,7 +5,11 @@
 
 **静态资源路径默认static/开头，所以js,css文件等直接/pc/js...即可**
 
-页面根路径在templates下  公共页面放在common下  个人页面放在user下  管理员页面放在admin下
+页面根路径在templates下  
+公共页面放在common下  
+个人页面放在user下  
+管理员页面放在admin下
+错误界面如404等放在error下
 
 导航栏跳转url
 失物广场/toLost
