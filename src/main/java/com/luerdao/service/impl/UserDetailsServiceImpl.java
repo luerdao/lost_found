@@ -1,5 +1,6 @@
 package com.luerdao.service.impl;
 
+import com.luerdao.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -22,7 +23,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
         User user = userService.getUser(stu_No);
         System.out.println(user);
-        switch (user.getRole()){
+        switch ((int) user.getRole()){
             case 0:
                 GrantedAuthority grantedAuthority = new SimpleGrantedAuthority("ROLE_USER");
                 grantedAuthorities.add(grantedAuthority);

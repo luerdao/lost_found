@@ -1,10 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <title>left-nav</title>
+
+  <link href="/pc/css/style.css" rel="stylesheet" type="text/css">
+
+  <script type="text/javascript" src="/pc/js/jquery.min.js"></script>
+
 </head>
+
 <body>
-<h1>2222222222222</h1>
+
+  <div class="lvc-wrap" id="lvc-nav">
+    <ul class="lvc-nav">
+      <li class="nav-pic1 next-layer" title="课堂管理">
+        <a>招领管理</a>
+        <ol>
+          <li>招领启示</li>
+          <li>类别管理</li>
+        </ol>
+      </li>
+      <li class="nav-pic2" title="用户管理"><a>用户管理</a></li>
+      <li class="nav-pic3" title="公告管理"><a>公告管理</a></li>
+      <li class="nav-pic4" title="反馈管理"><a>反馈管理</a></li>
+      <li class="nav-pic5" title="数据统计"><a>数据统计</a></li>
+      <!-- <li class="nav-pic6" title="用户管理"><a>用户管理</a></li>
+      <li class="nav-pic7 next-layer" title="报表统计">
+        <a>报表统计</a>
+        <ol>
+          <li>历史课堂统计</li>
+          <li>课堂实时统计</li>
+        </ol>
+      </li>
+      <li class="nav-pic8" title="日志管理"><a>日志管理</a></li>
+      <li class="nav-pic9" title="系统管理"><a>系统管理</a></li>
+      <li class="nav-pic10" title="订单管理"><a>订单管理</a></li>
+      <li class="nav-pic11" title="我的课堂"><a>我的课堂</a></li>
+      <li class="nav-pic12" title="个人中心"><a>个人中心</a></li> -->
+    </ul>
+    <button type="button" class="btn-nav"></button>
+  </div>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      //展开收起
+      $(".btn-nav").click(function () {
+        $(".lvc-wrap").toggleClass("lvc-close")
+        $("ol").toggleClass("small-ol")
+        $(".next-layer ol").hide()
+
+        if ($("#lvc-nav").hasClass('lvc-close')) {
+          $(".next-layer ").removeClass("arrow")
+        }
+      })
+
+      //选中状态
+      $(".lvc-nav li").click(function () {
+        $(this).siblings().find('ol').hide()
+        $(this).addClass("active").siblings().removeClass("active")
+      })
+
+      //选中子集清除父级active
+      $("ol>li").click(function (e) {
+        console.log('ol>li clicked')
+        e.stopPropagation()
+        $(this).parent().parent().removeClass("active")
+      })
+
+      //二级导航展开收起
+      $(".next-layer").click(function () {
+        $(this).children("ol").toggle();
+        $(this).toggleClass("arrow").siblings().removeClass("arrow")
+      })
+
+
+      $("ol li").click(function () {
+        if ($("ol").hasClass('small-ol')) {
+          $(".small-ol").hide();
+          $(this).parent().parent().addClass("active")
+        }
+      })
+    })
+  </script>
 </body>
+
 </html>
